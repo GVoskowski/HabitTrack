@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Habit Track</string>
+    <string name="bad_habit">Bad</string>
+    <string name="good_habit">Good</string>
+    <string name="neutral_habit">Neutral</string>
+    <string name="rate_your_habit">Rate your Habit</string>
+    <string name="habit_name">Habit name</string>
+    <string name="everyday_habit">Everyday</string>
+    <string name="often_habit">Often</string>
+    <string name="not_often_habit">Not Often</string>
+    <string name="habit_s_frequency">Habit\'s Frequency</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="add_habit">Add a Habit</string>
+    <string name="save">Save</string>
+</resources>

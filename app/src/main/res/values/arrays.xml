@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_frequency_options">
+        <item>@string/not_often_habit</item>
+        <item>@string/often_habit</item>
+        <item>@string/everyday_habit</item>
+    </string-array>
+
+    <string-array name="array_rating_options">
+        <item>@string/neutral_habit</item>
+        <item>@string/good_habit</item>
+        <item>@string/bad_habit</item>
+    </string-array>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp8"
+        android:paddingStart="@dimen/dp8">
+
+
+        <TextView
+
+            style="@style/CategoryStyle"
+            android:text="@string/basic_info"/>
+
+        <EditText
+            android:id="@+id/edit_habit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/habit_name"
+            android:paddingLeft="@dimen/dp8"
+            android:paddingStart="@dimen/dp8"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp8"
+        android:paddingStart="@dimen/dp8">
+
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/habit_s_frequency"/>
+
+        <Spinner
+            android:id="@+id/spinner_frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp50"
+            android:paddingRight="@dimen/dp16"
+            android:paddingLeft="@dimen/dp16"
+            android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/container_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp8"
+        android:paddingStart="@dimen/dp8">
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/rate_your_habit"/>
+
+        <Spinner
+            android:id="@+id/spinner_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp50"
+            android:paddingRight="@dimen/dp16"
+            android:paddingEnd="@dimen/dp16"
+            android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
