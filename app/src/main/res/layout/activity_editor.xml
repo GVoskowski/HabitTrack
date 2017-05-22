@@ -52,8 +52,8 @@
             android:id="@+id/spinner_frequency"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp50"
-            android:paddingRight="@dimen/dp16"
             android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp16"
             android:spinnerMode="dropdown"/>
 
     </LinearLayout>
@@ -80,8 +80,8 @@
             android:id="@+id/spinner_rating"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp50"
-            android:paddingRight="@dimen/dp16"
             android:paddingEnd="@dimen/dp16"
+            android:paddingRight="@dimen/dp16"
             android:spinnerMode="dropdown"/>
 
     </LinearLayout>

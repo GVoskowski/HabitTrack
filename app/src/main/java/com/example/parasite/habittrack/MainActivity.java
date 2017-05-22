@@ -47,52 +47,37 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseContract.HabitEntry.COLUMN_HABIT_FREQUENCY,
                 DatabaseContract.HabitEntry.COLUMN_HABIT_RATING};
 
-        Cursor cursor = db.query(
-                DatabaseContract.HabitEntry.TABLE_NAME,   // The table to query
-                projection,            // The columns to return
-                null,                  // The columns for the WHERE clause
-                null,                  // The values for the WHERE clause
-                null,                  // Don't group the rows
-                null,                  // Don't filter by row groups
-                null);                   // The sort order
+        Cursor cursorOne = mDbHelper.getDetails(projection);
 
         TextView displayView = (TextView) findViewById(R.id.text_view_habit);
 
         try {
-            displayView.setText("The habits table contains " + cursor.getCount() + " habits.\n\n");
+            displayView.setText("The habits table contains " + cursorOne.getCount() + " habits.\n\n");
             displayView.append(DatabaseContract.HabitEntry._ID + " - " +
                     DatabaseContract.HabitEntry.COLUMN_HABIT_NAME + " - " +
                     DatabaseContract.HabitEntry.COLUMN_HABIT_FREQUENCY + " - " +
                     DatabaseContract.HabitEntry.COLUMN_HABIT_RATING + " - " + "\n");
 
 
-            int idColumnIndex = cursor.getColumnIndex(DatabaseContract.HabitEntry._ID);
-            int nameColumnIndex = cursor.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_NAME);
-            int frequencyColumnIndex = cursor.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_FREQUENCY);
-            int ratingColumnIndex = cursor.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_RATING);
+            int idColumnIndex = cursorOne.getColumnIndex(DatabaseContract.HabitEntry._ID);
+            int nameColumnIndex = cursorOne.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_NAME);
+            int frequencyColumnIndex = cursorOne.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_FREQUENCY);
+            int ratingColumnIndex = cursorOne.getColumnIndex(DatabaseContract.HabitEntry.COLUMN_HABIT_RATING);
 
-            while (cursor.moveToNext()) {
-                int currentID = cursor.getInt(idColumnIndex);
-                String currentName = cursor.getString(nameColumnIndex);
-                int currentFrequency = cursor.getInt(frequencyColumnIndex);
-                int currentRating = cursor.getInt(ratingColumnIndex);
+            while (cursorOne.moveToNext()) {
+                int currentID = cursorOne.getInt(idColumnIndex);
+                String currentName = cursorOne.getString(nameColumnIndex);
+                int currentFrequency = cursorOne.getInt(frequencyColumnIndex);
+                int currentRating = cursorOne.getInt(ratingColumnIndex);
 
                 displayView.append(("\n" + currentID + " - " +
                         currentName + " - " +
                         currentFrequency + " - " +
                         currentRating));
-
-
             }
+
         } finally {
-            cursor.close();
+            cursorOne.close();
         }
-
-
     }
-
 }
-
-
-
-
