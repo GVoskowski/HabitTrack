@@ -2,7 +2,6 @@ package com.example.parasite.habittrack;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -37,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
         displayDatabaseInformation();
     }
 
-    private void displayDatabaseInformation() {
+    private Cursor displayDatabaseInformation() {
 
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         String[] projection = {
                 DatabaseContract.HabitEntry._ID,
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView displayView = (TextView) findViewById(R.id.text_view_habit);
 
-        try {
+
             displayView.setText("The habits table contains " + cursorOne.getCount() + " habits.\n\n");
             displayView.append(DatabaseContract.HabitEntry._ID + " - " +
                     DatabaseContract.HabitEntry.COLUMN_HABIT_NAME + " - " +
@@ -75,9 +73,6 @@ public class MainActivity extends AppCompatActivity {
                         currentFrequency + " - " +
                         currentRating));
             }
-
-        } finally {
-            cursorOne.close();
+            return cursorOne;
         }
     }
-}

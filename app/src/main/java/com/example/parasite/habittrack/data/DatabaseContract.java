@@ -16,9 +16,7 @@ public class DatabaseContract {
 
 
         public final static String TABLE_NAME = "habits";
-
         public final static String _ID = BaseColumns._ID;
-
         public final static String COLUMN_HABIT_NAME = "name";
         public final static String COLUMN_HABIT_FREQUENCY = "frequency";
         public final static String COLUMN_HABIT_RATING = "rating";
